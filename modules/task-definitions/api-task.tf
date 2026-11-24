@@ -7,14 +7,14 @@ resource "aws_ecs_task_definition" "habit_api" {
   cpu    = 256
   memory = 512
 
-  execution_role_arn = data.terraform_remote_state.infra.outputs.ecs_execution_role_arn
+  execution_role_arn = var.ecs_execution_role_arn
 
   container_definitions = jsonencode([
     {
       name      = "habit-api"
 
-      image     = "${data.terraform_remote_state.infra.outputs.api_ecr_repository_url}:latest"
-
+      image = "${var.api_ecr_repository_url}:latest"
+      
       essential = true
 
       portMappings = [
