@@ -28,3 +28,11 @@ output "api_task_definition_arn" {
 output "ui_task_definition_arn" {
   value = module.task_definitions.ui_task_definition_arn
 }
+
+output "api_service_name" {
+  value = module.services.api_service_name
+}
+
+output "ui_service_name" {
+  value = module.services.ui_service_name
+}
