@@ -20,3 +20,11 @@ output "habit_api_log_group_name" {
 output "habit_ui_log_group_name" {
   value = module.cloudwatch.habit_ui_log_group_name
 }
+
+output "api_task_definition_arn" {
+  value = module.task_definitions.api_task_definition_arn
+}
+
+output "ui_task_definition_arn" {
+  value = module.task_definitions.ui_task_definition_arn
+}
