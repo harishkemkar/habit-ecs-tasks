@@ -2,10 +2,13 @@ output "ecs_cluster_name" {
   value = data.terraform_remote_state.infra.outputs.ecs_cluster_name
 }
 
-output "ecr_repository_url" {
-  value = data.terraform_remote_state.infra.outputs.ecr_repository_url
+output "api_ecr_repository_url" {
+  value = data.terraform_remote_state.infra.outputs.api_ecr_repository_url
 }
 
+output "ui_ecr_repository_url" {
+  value = data.terraform_remote_state.infra.outputs.ui_ecr_repository_url
+}
 output "ecs_execution_role_arn" {
   value = data.terraform_remote_state.infra.outputs.ecs_execution_role_arn
 }
