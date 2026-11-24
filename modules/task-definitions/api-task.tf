@@ -7,8 +7,7 @@ resource "aws_ecs_task_definition" "habit_api" {
   cpu    = 256
   memory = 512
 
-  execution_role_arn =
-    data.terraform_remote_state.infra.outputs.ecs_execution_role_arn
+  execution_role_arn = data.terraform_remote_state.infra.outputs.ecs_execution_role_arn
 
   container_definitions = jsonencode([
     {
